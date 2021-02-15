@@ -2,8 +2,8 @@ package vadim.help.neuro.jpa.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import vadim.help.neuro.jpa.models.AnimalInf;
+import vadim.help.neuro.jpa.models.NameOfType;
 
 @Repository
-public interface AnimalRepository extends CrudRepository<AnimalInf, Long> {
+public interface NameOfTypeRepository extends CrudRepository<NameOfType, Long> {
 }

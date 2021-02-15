@@ -3,8 +3,8 @@ package vadim.help.neuro.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import vadim.help.neuro.jpa.models.Animal;
-import vadim.help.neuro.jpa.repository.AnimalRepository;
+import vadim.help.neuro.jpa.models.NameOfType;
+import vadim.help.neuro.jpa.repository.NameOfTypeRepository;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -18,7 +18,7 @@ import java.util.Optional;
 public class AnimalService {
 
     @Autowired
-    AnimalRepository animalRepository;
+    NameOfTypeRepository NameOfTypeRepository;
 
     public String recognize(MultipartFile file) {
         if (file == null || file.isEmpty()) {
@@ -55,10 +55,10 @@ public class AnimalService {
         if(id==1) id=5L;
 
 
-        Optional<Animal> animal = animalRepository.findById(id);
+        Optional<NameOfType> NameOfType = NameOfTypeRepository.findById(id);
 
-        if(!animal.isPresent()) return "ERR: Animal not found";
-        return animal.get().getName();
+        if(!NameOfType .isPresent()) return "ERR: Animal not found";
+        return NameOfType.get().getName();
 
     }
 

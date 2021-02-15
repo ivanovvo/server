@@ -5,21 +5,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Account {
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class PhotoOfArea {
     @Id private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private String email;
-    private String passwd;
-    //String email;
-   // String access_level;
-
-    //@Column(unique=true) String email;
-
+    //private Long animal_id;
+    private String name;
+    private Byte photo;
 
 }

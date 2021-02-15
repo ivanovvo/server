@@ -92,9 +92,9 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>7.0.0</version>
                 <configuration>
-                    <url>jdbc:postgresql://localhost:5432/animal</url>
-                    <user>animal</user>
-                    <password>animal</password>
+                    <url>jdbc:postgresql://localhost:5432/admin</url>
+                    <user>admin</user>
+                    <password>admin</password>
                 </configuration>
             </plugin>
             <plugin>

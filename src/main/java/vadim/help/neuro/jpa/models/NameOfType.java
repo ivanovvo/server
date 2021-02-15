@@ -10,16 +10,12 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Account {
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class NameOfType {
     @Id private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
 
-    private String email;
-    private String passwd;
-    //String email;
-   // String access_level;
 
-    //@Column(unique=true) String email;
-
+   // Long animal_id;
+   private String name;
 
 }

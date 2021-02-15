@@ -14,6 +14,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import vadim.help.neuro.jpa.models.Account;
 import vadim.help.neuro.jpa.repository.AccountRepository;
+import org.springframework.jdbc.config.JdbcNamespaceHandler;
 
 @Configuration
 @EnableGlobalAuthentication
@@ -54,12 +55,12 @@ public class ResourceSecurityConfiguration extends WebSecurityConfigurerAdapter 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userName -> {
-            if (accountRepository.findAccountByLogin(userName).isPresent()) {
-                Account user = accountRepository.findAccountByLogin(userName).get();
+            if (accountRepository.findAccountByEmail(userName).isPresent()) { /////////////////////////
+                Account user = accountRepository.findAccountByEmail(userName).get(); /////////////////////////
                 System.out.println(user);
                 return new org.springframework.security.core.userdetails.User(
-                        user.getLogin(),
-                        "{noop}" + user.getPassword(), true, true, true, true,
+                        user.getEmail(),
+                        "{noop}" + user.getPasswd(), true, true, true, true,
                         AuthorityUtils.createAuthorityList("USER"));
             }
             return null;
