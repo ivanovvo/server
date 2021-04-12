@@ -1,11 +1,7 @@
 package vadim.help.neuro.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
-import vadim.help.neuro.jpa.models.Account;
-import vadim.help.neuro.jpa.models.AnimalInf;
 import vadim.help.neuro.jpa.repository.AccountRepository;
 import vadim.help.neuro.jpa.repository.AnimalRepository;
 
@@ -17,13 +13,17 @@ public class InitService {
     @Autowired
     AnimalRepository animalRepository;
 
-    @EventListener(ApplicationReadyEvent.class) // убрать после отключения in-memory h2, переходе на постгре, мускуль
-    public void init() {
-       // accountRepository.save(new Account(1L, "admin", "admin","fsdfsf", "dfsdg"));
+    //@EventListener(ApplicationReadyEvent.class)
+    //public void init() {
+
+
+
+        //System.out.println("1");
+        //accountRepository.save(new Account("1","admin", "admin"));
         //accountRepository.save(new Account(2L, "test", "test"));
        // accountRepository.save(new Account(3L, "123", "123"));
 
        // animalRepository.save(new AnimalInf(4L, "Медведь"));
        // animalRepository.save(new Animal(5L, "Волчара"));
-    }
+    //}
 }

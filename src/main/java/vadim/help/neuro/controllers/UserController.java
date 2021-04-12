@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import vadim.help.neuro.controllers.dto.RegisterDto;
@@ -19,10 +18,10 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity login() {
-        return ResponseEntity.ok("logged");
+         return ResponseEntity.ok("logged");
     }
 
-    @PutMapping("/register")
+    @RequestMapping("/register")
     public ResponseEntity register(@RequestBody RegisterDto credits) {
         switch (userService.register(credits.getLogin(), credits.getPassword())) {
             case 0:

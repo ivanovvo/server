@@ -12,10 +12,14 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Account {
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Id private Long id;
+    @Column(nullable = false)
+    @Id private Integer id;
+    @Column(nullable = false)
+    private String login;
+    @Column(nullable = false)
+    private String password;
 
-    private String email;
-    private String passwd;
+
     //String email;
    // String access_level;
 

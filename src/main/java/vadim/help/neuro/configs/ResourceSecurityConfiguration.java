@@ -14,12 +14,10 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import vadim.help.neuro.jpa.models.Account;
 import vadim.help.neuro.jpa.repository.AccountRepository;
-import org.springframework.jdbc.config.JdbcNamespaceHandler;
 
 @Configuration
 @EnableGlobalAuthentication
 public class ResourceSecurityConfiguration extends WebSecurityConfigurerAdapter {
-
 
     @Autowired
     AccountRepository accountRepository;
@@ -27,6 +25,7 @@ public class ResourceSecurityConfiguration extends WebSecurityConfigurerAdapter 
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
+        System.out.println("nvcsgfwevegv");
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.addAllowedOrigin("*");
         configuration.addAllowedMethod("*");
@@ -40,10 +39,11 @@ public class ResourceSecurityConfiguration extends WebSecurityConfigurerAdapter 
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        System.out.println("vfsdgbvdsghedbhedh");
         http.cors(Customizer.withDefaults()).authorizeRequests()
                 .antMatchers("/user/register").permitAll()
                 .antMatchers("/user/**").authenticated()
-                .antMatchers("/animal/**").authenticated()
+                .antMatchers("/animal/**").permitAll()
                 .and()
                 .httpBasic()
                 .and()
@@ -54,13 +54,14 @@ public class ResourceSecurityConfiguration extends WebSecurityConfigurerAdapter 
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        System.out.println(auth + "logineeeeeeeeeeeeeee");
         auth.userDetailsService(userName -> {
-            if (accountRepository.findAccountByEmail(userName).isPresent()) { /////////////////////////
-                Account user = accountRepository.findAccountByEmail(userName).get(); /////////////////////////
+            if (accountRepository.findAccountByLogin(userName).isPresent()) { /////////////////////////
+                Account user = accountRepository.findAccountByLogin(userName).get(); /////////////////////////
                 System.out.println(user);
                 return new org.springframework.security.core.userdetails.User(
-                        user.getEmail(),
-                        "{noop}" + user.getPasswd(), true, true, true, true,
+                        user.getLogin(),
+                        "{noop}" + user.getPassword(), true, true, true, true,
                         AuthorityUtils.createAuthorityList("USER"));
             }
             return null;

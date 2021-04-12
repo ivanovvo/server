@@ -14,11 +14,12 @@ public class UserService {
     AccountRepository accountRepository;
 
     public Integer register(String login, String password) {
-        Optional<Account> userExist = accountRepository.findAccountByEmail(login);
+        Optional<Account> userExist = accountRepository.findAccountByLogin(login);
         if (userExist.isPresent()) return 1;
         try {
             accountRepository.save(new Account(null, login, password)); ////////////
         } catch (Exception e) {
+            e.printStackTrace();
             return 2;
         }
         return 0;
