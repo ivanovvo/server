@@ -16,7 +16,7 @@ jobs:
     services:
       localhost:
         image: postgres
-        ports: ['5432']
+        ports: ['5432:5432']
         env:
           POSTGRES_PASSWORD: admin
           POSTGRES_USER: admin
