@@ -25,11 +25,11 @@ class UserControllerTest {
         RegisterDto registerDto1 = new RegisterDto();
         RegisterDto registerDto2 = new RegisterDto();
         RegisterDto registerDto3 = new RegisterDto();
-        registerDto1.setLogin("tttrrr");
-        registerDto1.setPassword("tttrrr");
+        //registerDto1.setLogin("tttrrr");
+        //registerDto1.setPassword("tttrrr");
 
-        ResponseEntity<String> isUserCreated1 = userController.register(registerDto1);
-        System.out.println(isUserCreated1.getBody());
+        //ResponseEntity<String> isUserCreated1 = userController.register(registerDto1);
+        //System.out.println(isUserCreated1.getBody());
 
         //Assert.assertEquals("User created", isUserCreated1.getBody());
 
