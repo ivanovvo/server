@@ -12,6 +12,6 @@ RUN mvn -B package --file pom.xml -DskipTests
 # Package stage
 #
 FROM openjdk:11-slim
-COPY --from=build /workspace/target/server*.jar app.jar
+COPY --from=build/workspace/target/server*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","app.jar"]
