@@ -15,10 +15,10 @@ class UserServiceTest {
 
     @Test
     void register() {
-        String log1 = "t_7";
-        String pass1 = "t_7";
+        //String log1 = "t_7";
+        //String pass1 = "t_7";
 
-        String t1 = String.valueOf(userService.register(log1, pass1));
+        //String t1 = String.valueOf(userService.register(log1, pass1));
 
         //Assert.assertEquals("0", t1);
 
