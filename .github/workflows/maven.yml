@@ -11,7 +11,7 @@ on:
 
 jobs:
   build_and_test:
-    runs-on: windows-latest
+    runs-on: ubunte-latest
     
     services:
       localhost:
