@@ -65,7 +65,7 @@ create table "animal_inf" (
     constraint "animal_inf_pk" primary key ("id")
 );
 INSERT INTO public.animal_inf (id, name_id, type_id, area_id, inf_of_type, inf_of_area, inf_of_number, inf_of_downsizing, inf_of_security)
-VALUES ('0', '0', '0', '0', 'Род млекопитающих отряда хищных.' ||
+VALUES ('0', '0', '0', '0', 'Род млекопитающих отряда хищных. ' ||
  'Согласно палеонтологическим сведениям, род медведей появился ' ||
   '5—6 миллионов лет назад. Первым его представителем в настоящее ' ||
    'время считают медведя  Самым молодым видом рода является белый медведь, ' ||
