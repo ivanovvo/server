@@ -22,9 +22,9 @@ create table "name_of_type" (
     constraint "name_of_type_pk" primary key ("id")
 );
 INSERT INTO public.name_of_type (id, name)
-VALUES ('1', 'Медведь');
+VALUES ('0', 'Медведь');
 INSERT INTO public.name_of_type (id, name)
-VALUES ('2', 'Волк');
+VALUES ('1', 'Волк');
 
 create table "photo_of_type" (
     "id"                 integer        not null,
@@ -35,9 +35,9 @@ create table "photo_of_type" (
     constraint "photo_of_type_pk" primary key ("id")
 );
 INSERT INTO public.photo_of_type (id, animal_id, name, photo)
-VALUES ('1', '1', 'Медведь', null);
+VALUES ('0', '0', 'Медведь', null);
 INSERT INTO public.photo_of_type (id, animal_id, name, photo)
-VALUES ('2', '2', 'Волк', null);
+VALUES ('1', '1', 'Волк', null);
 
 create table "photo_of_area" (
     "id"                  integer         not null,
@@ -47,9 +47,9 @@ create table "photo_of_area" (
      constraint "photo_of_area_pk" primary key ("id")
 );
 INSERT INTO public.photo_of_area (id, animal_id, name, photo)
-VALUES ('1', '1', 'Медведь', null);
+VALUES ('0', '0', 'Медведь', null);
 INSERT INTO public.photo_of_area (id, animal_id, name, photo)
-VALUES ('2', '2', 'Волк', null);
+VALUES ('1', '1', 'Волк', null);
 
 create table "animal_inf" (
     "id"                   integer not null,
@@ -65,7 +65,7 @@ create table "animal_inf" (
     constraint "animal_inf_pk" primary key ("id")
 );
 INSERT INTO public.animal_inf (id, name_id, type_id, area_id, inf_of_type, inf_of_area, inf_of_number, inf_of_downsizing, inf_of_security)
-VALUES ('1', '1', '1', '1', 'Род млекопитающих отряда хищных.' ||
+VALUES ('0', '0', '0', '0', 'Род млекопитающих отряда хищных.' ||
  'Согласно палеонтологическим сведениям, род медведей появился ' ||
   '5—6 миллионов лет назад. Первым его представителем в настоящее ' ||
    'время считают медведя  Самым молодым видом рода является белый медведь, ' ||
@@ -82,7 +82,7 @@ VALUES ('1', '1', '1', '1', 'Род млекопитающих отряда хи
             'в других — Югославии, Румынии, Болгарии — их добыча более или менее ограниченна и допускается лишь в спортивных ' ||
              'целях по платным лицензиям. Много медведей в крупных национальных парках США и Канады.');
 INSERT INTO public.animal_inf (id, name_id, type_id, area_id, inf_of_type, inf_of_area, inf_of_number, inf_of_downsizing, inf_of_security)
-VALUES ('2', '2', '2', '2', 'Вид животного общее положение. вид хищных млекопитающих из семейства псовых. Кроме того, ' ||
+VALUES ('1', '1', '1', '1', 'Вид животного общее положение. вид хищных млекопитающих из семейства псовых. Кроме того, ' ||
  'как показывают результаты изучения последовательности ДНК и дрейфа генов, является прямым предком домашней собаки, ' ||
   'которая обычно рассматривается как подвид волка Волк — одно из самых крупных современных животных в своём семействе:' ||
    ' длина его тела (без учёта хвоста) может достигать 160 см, длина хвоста — до 52 см, высота в холке — до 90 см; масса ' ||
